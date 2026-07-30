@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Projets</h1>
+        <p class="page-subtitle">Une selection de mes realisations techniques</p>
+    </div>
+</section>
+
+<section class="projects-section">
+    <div class="container">
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="Big Data">Big Data</button>
+            <button class="filter-btn" data-filter="Machine Learning">Machine Learning</button>
+            <button class="filter-btn" data-filter="Robotique">Robotique</button>
+        </div>
+
+        <div class="projects-grid">
+            {% for project in projects %}
+            <div class="project-card" data-category="{{ project.category }}">
+                <div class="project-image">
+                    <div class="project-placeholder">
+                        {% if 'Big Data' in project.category %}
+                            <i class="fas fa-database"></i>
+                        {% elif 'ML' in project.category or 'Machine' in project.category %}
+                            <i class="fas fa-brain"></i>
+                        {% elif 'Robot' in project.category %}
+                            <i class="fas fa-robot"></i>
+                        {% endif %}
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="{{ project.github }}" target="_blank" class="project-link" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            {% if project.demo and project.demo != '#' %}
+                            <a href="{{ project.demo }}" target="_blank" class="project-link" title="Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">{{ project.category }}</span>
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-tech">
+                        {% for tech in project.technologies %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="github-cta">
+    <div class="container">
+        <div class="cta-card">
+            <i class="fab fa-github"></i>
+            <h2>Plus de projets sur GitHub</h2>
+            <p>Decouvrez tous mes projets open source et contributions sur mon profil GitHub.</p>
+            <a href="https://github.com/mkosemes" target="_blank" class="btn btn-primary">
+                <i class="fab fa-github"></i> Voir mon GitHub
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

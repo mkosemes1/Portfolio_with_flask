@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Competences</h1>
+        <p class="page-subtitle">Mes expertises techniques et technologiques</p>
+    </div>
+</section>
+
+<section class="skills-section">
+    <div class="container">
+        <div class="skills-categories">
+            {% for category, data in skills.items() %}
+            <div class="skill-category" data-aos="fade-up">
+                <div class="category-header">
+                    <div class="category-icon">
+                        {% if data.icon == 'database' %}
+                            <i class="fas fa-database"></i>
+                        {% elif data.icon == 'brain' %}
+                            <i class="fas fa-brain"></i>
+                        {% elif data.icon == 'cpu' %}
+                            <i class="fas fa-microchip"></i>
+                        {% elif data.icon == 'code' %}
+                            <i class="fas fa-code"></i>
+                        {% elif data.icon == 'cloud' %}
+                            <i class="fas fa-cloud"></i>
+                        {% elif data.icon == 'tools' %}
+                            <i class="fas fa-tools"></i>
+                        {% endif %}
+                    </div>
+                    <h2>{{ category }}</h2>
+                </div>
+                <div class="skills-list">
+                    {% for skill in data.items %}
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">{{ skill.name }}</span>
+                            <span class="skill-level">{{ skill.level }}%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="{{ skill.level }}"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="skills-summary">
+    <div class="container">
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3>6 Domaines</h3>
+                <p>Expertise transversale couvrant Big Data, ML, Robotique, Cloud et plus</p>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>36+ Technologies</h3>
+                <p>Competences maitrisees sur un large eventail d'outils et frameworks</p>
+            </div>
+            <div class="summary-card">
+                <div class="summary-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Niveau Expert</h3>
+                <p>Competences maintenues a jour avec les dernieres avancees technologiques</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

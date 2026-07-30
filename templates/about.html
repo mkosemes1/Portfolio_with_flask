@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">A propos</h1>
+        <p class="page-subtitle">Mon parcours et ma passion pour la technologie</p>
+    </div>
+</section>
+
+<section class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <div class="image-frame">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                    <div class="image-decoration"></div>
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="section-tag">Qui suis-je ?</span>
+                <h2 class="section-title">{{ data.name }}</h2>
+                <h3 class="about-role">{{ data.title }}</h3>
+                <p class="about-description">{{ data.about }}</p>
+                <p class="about-description">{{ data.about_detail }}</p>
+                <div class="about-details">
+                    <div class="detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>{{ data.location }}</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>{{ data.email }}</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-briefcase"></i>
+                        <span>{{ data.experience_years }} d'experience</span>
+                    </div>
+                </div>
+                <div class="about-actions">
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Me contacter
+                    </a>
+                    <a href="{{ data.github }}" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="timeline-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Parcours</span>
+            <h2 class="section-title">Mon experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2023 - Present</span>
+                    <h3>Senior Data Scientist / ML Engineer</h3>
+                    <p class="timeline-company">Entreprise Tech Innovation</p>
+                    <p>Direction de projets Big Data et IA. Conception de pipelines de machine learning en production pour des millions d'utilisateurs.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2021 - 2023</span>
+                    <h3>Machine Learning Engineer</h3>
+                    <p class="timeline-company">Startup IA</p>
+                    <p>Developpement de modeles de deep learning pour la vision par ordinateur et le NLP. Deploiement sur AWS/GCP.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2020 - 2021</span>
+                    <h3>Robotics Engineer</h3>
+                    <p class="timeline-company">Laboratoire de Recherche</p>
+                    <p>Conception de robots autonomes avec ROS2, navigation intelligente et perception par deep learning.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2019 - 2020</span>
+                    <h3>Data Engineer</h3>
+                    <p class="timeline-company">Cabinet de Conseil</p>
+                    <p>Architecture de data lakes et pipelines ETL avec Spark, Kafka et Airflow pour des clients grand public.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="certifications-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Certifications</span>
+            <h2 class="section-title">Mes certifications</h2>
+        </div>
+        <div class="cert-grid">
+            {% for cert in certifications %}
+            <div class="cert-card">
+                <div class="cert-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>{{ cert.name }}</h3>
+                <p>{{ cert.issuer }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

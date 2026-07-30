@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-bg">
+        <div class="particle" style="--x: 10%; --y: 20%; --delay: 0s; --duration: 15s;"></div>
+        <div class="particle" style="--x: 80%; --y: 60%; --delay: 2s; --duration: 20s;"></div>
+        <div class="particle" style="--x: 30%; --y: 80%; --delay: 4s; --duration: 18s;"></div>
+        <div class="particle" style="--x: 70%; --y: 30%; --delay: 1s; --duration: 22s;"></div>
+        <div class="particle" style="--x: 50%; --y: 50%; --delay: 3s; --duration: 16s;"></div>
+    </div>
+    <div class="container hero-content">
+        <div class="hero-text">
+            <p class="hero-greeting">Bonjour, je suis</p>
+            <h1 class="hero-name">{{ data.name }}</h1>
+            <h2 class="hero-title">{{ data.title }}</h2>
+            <p class="hero-tagline">{{ data.tagline }}</p>
+            <div class="hero-actions">
+                <a href="{{ url_for('projects') }}" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Voir mes projets
+                </a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline">
+                    <i class="fas fa-paper-plane"></i> Me contacter
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="5">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Annees d'experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="30">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Projets realises</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="20">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Clients satisfaits</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="code-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="code-title">expertise.py</span>
+                </div>
+                <pre class="code-content"><code><span class="kw">class</span> <span class="cls">DataScientist</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="self">self</span>):
+        <span class="self">self</span>.skills = [
+            <span class="str">"Big Data"</span>,
+            <span class="str">"Machine Learning"</span>,
+            <span class="str">"Robotique"</span>,
+            <span class="str">"Deep Learning"</span>,
+            <span class="str">"Cloud Computing"</span>,
+        ]
+        <span class="self">self</span>.passion = <span class="bool">True</span>
+
+    <span class="kw">def</span> <span class="fn">solve</span>(<span class="self">self</span>, problem):
+        <span class="kw">return</span> <span class="self">self</span>.innovate(problem)</code></pre>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <a href="#next-section">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Defiler</span>
+        </a>
+    </div>
+</section>
+
+<section class="quick-about" id="next-section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Apercu</span>
+            <h2 class="section-title">Ce que je fais</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Big Data</h3>
+                <p>Architecture et traitement de flux de donnees massifs en temps reel avec Spark, Kafka et Hadoop.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-delay="100">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Machine Learning</h3>
+                <p>Modeles predictifs, NLP, Computer Vision et Deep Learning avec TensorFlow et PyTorch.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-delay="200">
+                <div class="service-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Robotique</h3>
+                <p>Robots autonomes, navigation intelligente, perception et systems ROS/ROS2.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-delay="300">
+                <div class="service-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Cloud & MLOps</h3>
+                <p>Deploiement scalable, pipelines CI/CD et orchestration MLOps sur AWS/GCP.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-projects">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">Projets en vedette</h2>
+        </div>
+        <div class="projects-preview">
+            <div class="project-card-preview">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Big Data</span>
+                    <h3>Pipeline Big Data - Analyse en temps reel</h3>
+                    <p>Systeme de traitement de donnees massives en temps reel.</p>
+                </div>
+            </div>
+            <div class="project-card-preview">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Robotique</span>
+                    <h3>Robot Autonome - Navigation Intelligente</h3>
+                    <p>Robot naviguant en temps reel grace au SLAM et au Deep Learning.</p>
+                </div>
+            </div>
+            <div class="project-card-preview">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Machine Learning</span>
+                    <h3>Systeme de Recommandation IA</h3>
+                    <p>Plateforme de recommandation personnalisee avec Deep Learning.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="{{ url_for('projects') }}" class="btn btn-primary">
+                Voir tous les projets <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
