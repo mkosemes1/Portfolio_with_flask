@@ -17,26 +17,26 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', '')
 mail = Mail(app)
 
 PROFESSIONAL_DATA = {
-    'name': 'Mkosemes',
-    'title': 'Data Scientist & ML Engineer',
-    'profile_photo': 'profile.jpg',
-    'tagline': 'Big Data | Machine Learning | Robotique | Intelligence Artificielle',
+    'name': 'M.Moustapha Souane',
+    'title': 'Junior Data Scientist & ML | Pentester',
+    'profile_photo': 'IMG_1853.JPG',
+    'tagline': 'Big Data | Machine Learning | IOT & Robotique | Intelligence Artificielle',
     'email': 'malickoseme@gmail.com',
-    'phone': '+33 6 00 00 00 00',
-    'location': 'France',
+    'phone': '+221 77 590 87 46',
+    'location': 'Dakar, SENEGAL',
     'linkedin': 'https://linkedin.com/in/mkosemes',
-    'github': 'https://github.com/mkosemes',
-    'about': """Passionné par la technologie et l'innovation, je suis un ingénieur spécialisé
-    dans le Big Data, le Machine Learning et la Robotique. Avec plusieurs années d'expérience
+    'github': 'https://github.com/mkosemes1',
+    'about': """Passionné par la technologie et l'innovation, je suis etudiant de 3 ieme annee en informatique spécialisé
+    dans le Big Data, le Machine Learning en plus de cela j'ai un interet particulier a la Robotique et dans l'IOT ce qui ma permis d'evoluer en autoaprentissage dans ce domaine. Avec plusieurs années d'expérience
     dans la conception et le déploiement de solutions intelligentes, je transforme les données
     en actions concrètes et les problèmes complexes en solutions elegantes.""",
     'about_detail': """Mon parcours m'a permis de développer une expertise transversale, allant
-    de l'analyse de données massives à la conception de systèmes robotiques autonomes.
+    de l'analyse de données massives à la conception de systèmes embarques et robotiques autonomes.
     Je crois fermement que la technologie doit servir l'humain et résoudre des problèmes concrets.
     Chaque projet est une opportunité d'apprendre et de repousser les limites du possible.""",
-    'experience_years': '5+',
-    'projects_completed': '30+',
-    'clients_satisfied': '20+',
+    'experience_years': '3+',
+    'projects_completed': '11+',
+    'clients_satisfied': '5+',
 }
 
 SKILLS = {
@@ -62,7 +62,7 @@ SKILLS = {
             {'name': 'Reinforcement Learning', 'level': 80},
         ]
     },
-    'Robotique': {
+    'IOT & Robotique': {
         'icon': 'cpu',
         'items': [
             {'name': 'ROS / ROS2', 'level': 90},
@@ -79,9 +79,9 @@ SKILLS = {
             {'name': 'Python', 'level': 98},
             {'name': 'C++', 'level': 85},
             {'name': 'R', 'level': 80},
-            {'name': 'SQL / NoSQL', 'level': 90},
+            {'name': 'SQL / NoSQL', 'level': 80},
             {'name': 'JavaScript', 'level': 75},
-            {'name': 'MATLAB', 'level': 78},
+            {'name': 'Java', 'level': 60},
         ]
     },
     'Cloud & DevOps': {
@@ -111,10 +111,10 @@ SKILLS = {
 PROJECTS = [
     {
         'id': 1,
-        'title': 'Pipeline Big Data - Analyse en temps réel',
-        'description': 'Système de traitement de données en temps réel pour l\'analyse comportementale de millions d\'utilisateurs. Utilisation de Kafka, Spark Streaming et Elasticsearch.',
+        'title': 'Pipeline Big Data - Environement Monitoring',
+        'description': 'Analyse et visualisation de la qualite de l\'aire en temps reel avec des donnees collectes sur OPen Meteo',
         'category': 'Big Data',
-        'technologies': ['Apache Kafka', 'Spark Streaming', 'Elasticsearch', 'Python', 'Docker'],
+        'technologies': ['Apache Kafka', 'Spark Streaming', 'Minio', 'Python', 'Docker'],
         'image': 'bigdata.jpg',
         'github': 'https://github.com/mkosemes/bigdata-pipeline',
         'demo': '#',
@@ -123,7 +123,7 @@ PROJECTS = [
         'id': 2,
         'title': 'Robot Autonome - Navigation Intelligente',
         'description': 'Développement d\'un robot autonome capable de naviguer dans des environnements complexes grâce au SLAM et au Deep Learning pour la perception.',
-        'category': 'Robotique',
+        'category': 'IOT & Robotique',
         'technologies': ['ROS2', 'Python', 'C++', 'TensorFlow', 'Gazebo'],
         'image': 'robot.jpg',
         'github': 'https://github.com/mkosemes/autonomous-robot',
@@ -163,7 +163,7 @@ PROJECTS = [
         'id': 6,
         'title': 'Bras Robotique - Manipulation d\'Objets',
         'description': 'Système de contrôle intelligent pour un bras robotique utilisant la vision par ordinateur et le reinforcement learning.',
-        'category': 'Robotique',
+        'category': 'IOT & Robotique',
         'technologies': ['ROS', 'Python', 'OpenCV', 'PyBullet', 'Arduino'],
         'image': 'arm.jpg',
         'github': 'https://github.com/mkosemes/robotic-arm',
@@ -172,10 +172,10 @@ PROJECTS = [
 ]
 
 CERTIFICATIONS = [
-    {'name': 'AWS Certified Machine Learning - Specialty', 'issuer': 'Amazon Web Services'},
-    {'name': 'Google Cloud Professional Data Engineer', 'issuer': 'Google Cloud'},
-    {'name': 'TensorFlow Developer Certificate', 'issuer': 'Google'},
-    {'name': 'IBM Data Science Professional Certificate', 'issuer': 'IBM'},
+    {'name': 'Informatique et internet', 'issuer': 'FORCE N'},
+    {'name': 'Introduction en Cybersecurite', 'issuer': 'CISCO'},
+    {'name': 'Data analyst ( en cours )', 'issuer': 'CISCO'},
+    {'name': 'Data Science ( en cours )', 'issuer': 'CISCO'},
 ]
 
 @app.route('/')
