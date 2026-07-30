@@ -20,7 +20,7 @@ PROFESSIONAL_DATA = {
     'name': 'Mkosemes',
     'title': 'Data Scientist & ML Engineer',
     'tagline': 'Big Data | Machine Learning | Robotique | Intelligence Artificielle',
-    'email': 'contact@mkosemes.dev',
+    'email': 'malickoseme@gmail.com',
     'phone': '+33 6 00 00 00 00',
     'location': 'France',
     'linkedin': 'https://linkedin.com/in/mkosemes',
@@ -187,11 +187,11 @@ def about():
 
 @app.route('/skills')
 def skills():
-    return render_template('skills.html', skills=SKILLS)
+    return render_template('skills.html', data=PROFESSIONAL_DATA, skills=SKILLS)
 
 @app.route('/projects')
 def projects():
-    return render_template('projects.html', projects=PROJECTS)
+    return render_template('projects.html', data=PROFESSIONAL_DATA, projects=PROJECTS)
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
