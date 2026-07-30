@@ -13,9 +13,7 @@
         <div class="about-grid">
             <div class="about-image">
                 <div class="image-frame">
-                    <div class="image-placeholder">
-                        <i class="fas fa-user-astronaut"></i>
-                    </div>
+                    <img src="{{ url_for('static', filename='img/' + data.profile_photo) }}" alt="Photo de profil" class="profile-photo">
                     <div class="image-decoration"></div>
                 </div>
             </div>

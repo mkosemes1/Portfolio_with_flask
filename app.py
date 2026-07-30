@@ -19,6 +19,7 @@ mail = Mail(app)
 PROFESSIONAL_DATA = {
     'name': 'Mkosemes',
     'title': 'Data Scientist & ML Engineer',
+    'profile_photo': 'profile.jpg',
     'tagline': 'Big Data | Machine Learning | Robotique | Intelligence Artificielle',
     'email': 'malickoseme@gmail.com',
     'phone': '+33 6 00 00 00 00',

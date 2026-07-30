@@ -11,6 +11,7 @@
     </div>
     <div class="container hero-content">
         <div class="hero-text">
+            <img src="{{ url_for('static', filename='img/' + data.profile_photo) }}" alt="Photo de profil" class="hero-photo">
             <p class="hero-greeting">Bonjour, je suis</p>
             <h1 class="hero-name">{{ data.name }}</h1>
             <h2 class="hero-title">{{ data.title }}</h2>
@@ -120,8 +121,11 @@
         <div class="projects-preview">
             <div class="project-card-preview">
                 <div class="project-image">
+                    <img src="{{ url_for('static', filename='img/bigdata.jpg') }}" alt="Pipeline Big Data" class="project-photo">
                     <div class="project-overlay">
-                        <i class="fas fa-database"></i>
+                        <div class="project-links">
+                            <a href="{{ url_for('projects') }}" class="project-link"><i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-info">
@@ -132,8 +136,11 @@
             </div>
             <div class="project-card-preview">
                 <div class="project-image">
+                    <img src="{{ url_for('static', filename='img/robot.jpg') }}" alt="Robot Autonome" class="project-photo">
                     <div class="project-overlay">
-                        <i class="fas fa-robot"></i>
+                        <div class="project-links">
+                            <a href="{{ url_for('projects') }}" class="project-link"><i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-info">
@@ -144,8 +151,11 @@
             </div>
             <div class="project-card-preview">
                 <div class="project-image">
+                    <img src="{{ url_for('static', filename='img/ml.jpg') }}" alt="Systeme de Recommandation IA" class="project-photo">
                     <div class="project-overlay">
-                        <i class="fas fa-brain"></i>
+                        <div class="project-links">
+                            <a href="{{ url_for('projects') }}" class="project-link"><i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="project-info">
